@@ -1,0 +1,17 @@
+You can play within docker by simply:
+#docker build -t my_image_name .
+#docker run -it --rm --entrypoint /bin/bash my_image_name
+now you are in your docker container, you can check if your directories exist
+
+then by using the docker image u can create the docker containers
+
+1)docker run -it -d docker_image_name
+
+2) if want to do port mapping then
+ docker run -p 80:80 --name=app1 docker_image_name
+3) if you want to copy some files from host machine to docker container then use this command.
+	#sudo docker cp /home/user/Documents/index.html 8f631598cb2e:/var/www/html
+
+3)if you made any changes in particular container and the want to make it commit so can it makes an new image of that modified container,you can use $
+  # sudo docker commit 8f631598cb2e  myapacheimage1
+
